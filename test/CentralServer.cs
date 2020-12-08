@@ -8,7 +8,7 @@ namespace test
     public class CentralServer
     {
         protected int totalNum = 4;
-        public Dictionary<string, int> inventory = new Dictionary<string, int> { };
+        protected Dictionary<string, int> inventory = new Dictionary<string, int> { };
         
         protected Robot robot1 = new Robot(1);
         protected Robot robot2 = new Robot(2);
@@ -32,31 +32,68 @@ namespace test
             inventory.Add(pack4.getName(), 10);
             inventory.Add(pack5.getName(), 10);
         }
-        
+
+        /**
+        * return number of water in stock.
+        * @param nothing
+        * 
+        * @return return number of water in stock.
+        */
         public int waterInventory()
         {
             return inventory[pack1.getName()];
         }
-
+        /**
+       * return number of juice in stock.
+       * @param nothing
+       * 
+       * @return return number of juice in stock.
+       */
         public int juiceInventory()
         {
             return inventory[pack2.getName()];
         }
+
+        /**
+       * return number of coke in stock.
+       * @param nothing
+       * 
+       * @return return number of coke in stock.
+       */
         public int cokeInventory()
         {
             return inventory[pack3.getName()];
         }
+
+        /**
+       * return number of fanta in stock.
+       * @param nothing
+       * 
+       * @return return number of fanta in stock.
+       */
         public int fantaInventory()
         {
             return inventory[pack4.getName()];
         }
+
+        /**
+       * return number of crush in stock.
+       * @param nothing
+       * 
+       * @return return number of crush in stock.
+       */
         public int crushInventory()
         {
             return inventory[pack5.getName()];
         }
-        
-        
 
+
+        /**
+       * set up a delivery truck
+       * @param order the order list truck will send
+       * 
+       * @return a delivery truck in an assigned dock
+       */
         public Truck addDeliveryTruck(Dictionary<PackInfo, int> order)
         {
             Truck deTruck = new Truck(order);
@@ -79,7 +116,12 @@ namespace test
 
             return deTruck;
         }
-
+        /**
+      * set up a restock truck.
+      * @param order the restock list truck will bring to warehouse
+      * 
+      * @return a restock truck in an assigned dock
+      */
         public Truck addRestockTruck(Dictionary<PackInfo, int> order)
         {
             Truck reTruck = new Truck(order);
@@ -119,9 +161,14 @@ namespace test
         }
 
 
-  
 
 
+        /**
+      * call robots to pick item that shows on list and put it on truck.
+      * @param the delivery truck
+      * 
+      * @return nothing
+      */
         public void sendPack(Truck deTruck)
         {
             List<Thread> workLine = new List<Thread> { };
@@ -243,6 +290,13 @@ namespace test
             
         }
 
+
+        /**
+      * call robots to pick item on truck put it in warehouse.
+      * @param the restock truck
+      * 
+      * @return nothing
+      */
         public void reStock( Truck reTruck)
         {
             List<Thread> workLine = new List<Thread> { };
@@ -362,20 +416,36 @@ namespace test
             releaseDock(reTruck);
 
         }
-
+        /**
+      * return whole inventory
+      * @param nothing
+      * 
+      * @return return inventory dictionary pair
+      */
         public Dictionary<String, int> getInventory()
         {
             return inventory;
         }
 
+        /**
+      * print out all robots' current battery
+      * @param nothing
+      * 
+      * @return nothing.
+      */
         public void showRobotBattery()
         {
-            Console.WriteLine($"Robot1 {robot1.checkBattery()}");
-            Console.WriteLine($"Robot2 {robot2.checkBattery()}");
-            Console.WriteLine($"Robot3 {robot3.checkBattery()}");
-            Console.WriteLine($"Robot4 {robot4.checkBattery()}");
+            Console.WriteLine($"Robot1 {robot1.checkBattery()}%");
+            Console.WriteLine($"Robot2 {robot2.checkBattery()}%");
+            Console.WriteLine($"Robot3 {robot3.checkBattery()}%");
+            Console.WriteLine($"Robot4 {robot4.checkBattery()}%");
         }
-
+        /**
+     * print out all robots' current coordinate
+     * @param nothing
+     * 
+     * @return nothing.
+     */
         public void showRobotCoordinate()
         {
             Console.WriteLine($"Robot1 {robot1.getCoordinate()}");
