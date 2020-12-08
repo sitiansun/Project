@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sitian\\source\\repos\\test\\test.csproj",
+      "projectUniqueName": "C:\\Users\\Sitian\\source\\repos\\sitiansun\\CPEN333project\\test\\test.csproj",
       "projectName": "test",
-      "projectPath": "C:\\Users\\Sitian\\source\\repos\\test\\test.csproj",
+      "projectPath": "C:\\Users\\Sitian\\source\\repos\\sitiansun\\CPEN333project\\test\\test.csproj",
       "packagesPath": "C:\\Users\\Sitian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sitian\\source\\repos\\test\\obj\\",
+      "outputPath": "C:\\Users\\Sitian\\source\\repos\\sitiansun\\CPEN333project\\test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sitian\\AppData\\Roaming\\NuGet\\NuGet.Config",

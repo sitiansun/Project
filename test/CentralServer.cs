@@ -131,14 +131,14 @@ namespace test
             
             foreach (var aPack in order)//Ask one robot that is not on duty to do the order
             {
-                Console.WriteLine("here");
+              
                 Thread.Sleep(300);
                     workLine.Add(new Thread(() =>
                     {
-                        Console.WriteLine("here");
+                       
                         if (!robot1.isRobotOnDuty())
                         {
-                            Console.WriteLine("here");
+                            
                             robot1.onDuty();
                             for (int i = 0; i < aPack.Value; i++)
                             {
@@ -168,7 +168,7 @@ namespace test
 
                             }
                             robot2.toRestArea();
-                            Console.WriteLine("2 used");
+                           
                         }
 
                         else if (!robot3.isRobotOnDuty())
@@ -230,7 +230,7 @@ namespace test
             
             foreach (Thread work in workLine)
             {
-                Console.WriteLine("here");
+            
                 work.Join();
             }
 
@@ -370,18 +370,18 @@ namespace test
 
         public void showRobotBattery()
         {
-            Console.WriteLine($"Robot1{robot1.checkBattery()}");
-            Console.WriteLine($"Robot2{robot2.checkBattery()}");
-            Console.WriteLine($"Robot3{robot3.checkBattery()}");
-            Console.WriteLine($"Robot4{robot4.checkBattery()}");
+            Console.WriteLine($"Robot1 {robot1.checkBattery()}");
+            Console.WriteLine($"Robot2 {robot2.checkBattery()}");
+            Console.WriteLine($"Robot3 {robot3.checkBattery()}");
+            Console.WriteLine($"Robot4 {robot4.checkBattery()}");
         }
 
         public void showRobotCoordinate()
         {
-            Console.WriteLine($"Robot1{robot1.getCoordinate()}");
-            Console.WriteLine($"Robot2{robot2.getCoordinate()}");
-            Console.WriteLine($"Robot3{robot3.getCoordinate()}");
-            Console.WriteLine($"Robot4{robot4.getCoordinate()}");
+            Console.WriteLine($"Robot1 {robot1.getCoordinate()}");
+            Console.WriteLine($"Robot2 {robot2.getCoordinate()}");
+            Console.WriteLine($"Robot3 {robot3.getCoordinate()}");
+            Console.WriteLine($"Robot4 {robot4.getCoordinate()}");
         }
 
     }
